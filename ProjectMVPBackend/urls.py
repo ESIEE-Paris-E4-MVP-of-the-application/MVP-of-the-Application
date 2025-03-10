@@ -27,4 +27,4 @@ urlpatterns = [
 ]
 
 if DEBUG:
-    urlpatterns.append(path(r'^/media/(?<path>.*)$', serve,{'document_root': MEDIA_ROOT}),)
+    urlpatterns.append(path(r'^media/(?<path>.*)$', serve,{'document_root': MEDIA_ROOT}),)

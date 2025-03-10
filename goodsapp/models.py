@@ -1,8 +1,9 @@
 from django.db import models
 
-# There is the table for the models.
+# The Django ORM will create those form base on the code.
 class Category(models.Model):
     cname =  models.CharField(max_length=10)
+
 
     def __unicode__(self):
         return u'<Category:%s>' % self.cname
@@ -28,3 +29,17 @@ class GoodDetail(models.Model):
     goodsdname = models.ForeignKey(GoodsDetailName)
     goods = models.ForeignKey(Goods)
 
+class Weight(models.Model):
+    wname = models.CharField(max_length=10)
+
+
+class Condition(models.Model):
+    conditionname = models.CharField(max_length=10)
+    conditionurl = models.ImageField(upload_to='conditions/')
+
+class Inventory(models.Model):
+    count = models.PositiveIntegerField(default=100)
+    condition = models.ForeignKey(Condition)
+    goods = models.ForeignKey(Goods)
+    # Not sure that we want this or not
+    weight = models.ForeignKey(Weight)

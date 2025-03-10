@@ -1,0 +1,60 @@
+[
+  {
+    "category": "Fruits",
+    "goods": [
+      {
+        "goodsname": "Apple",
+        "goods_desc": "Fresh Fuji apples with a sweet taste",
+        "goods_price": 8.50,
+        "goods_oldprice": 10.00,
+        "weights": [["500g", 1], ["1kg", 2]],
+        "conditions": [["Fresh", "/media/fresh_apple.jpg"], ["Organic", "media/organic_apple.jpg"]],
+        "specs": [
+          ["Fuji Apple", ["media/apple1.jpg", "/meida/apple2.jpg"]],
+          ["Green Apple", ["/meida/apple3.jpg", "/meida/apple4.jpg"]]
+        ]
+      },
+      {
+        "goodsname": "Banana",
+        "goods_desc": "Natural bananas rich in potassium",
+        "goods_price": 6.00,
+        "goods_oldprice": 7.00,
+        "weights": [["1kg", 1], ["2kg", 2]],
+        "conditions": [["Fresh", "/meida/fresh_banana.jpg"]],
+        "specs": [
+          ["Yellow Banana", ["/meida/banana1.jpg"]],
+          ["Green Banana", ["/meida/banana2.jpg"]]
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Vegetables",
+    "goods": [
+      {
+        "goodsname": "Tomato",
+        "goods_desc": "Fresh tomatoes, perfect for salads and cooking",
+        "goods_price": 5.00,
+        "goods_oldprice": 6.00,
+        "weights": [["500g", 1], ["1kg", 2]],
+        "conditions": [["Fresh", "/meida/fresh_tomato.jpg"], ["Organic", "/meida/organic_tomato.jpg"]],
+        "specs": [
+          ["Large Tomato", ["/meida/tomato1.jpg"]],
+          ["Small Tomato", ["/meida/tomato2.jpg"]]
+        ]
+      },
+      {
+        "goodsname": "Carrot",
+        "goods_desc": "Fresh carrots rich in Vitamin A",
+        "goods_price": 4.50,
+        "goods_oldprice": 5.00,
+        "weights": [["500g", 1], ["1kg", 2]],
+        "conditions": [["Fresh", "/meida/fresh_carrot.jpg"]],
+        "specs": [
+          ["Large Carrot", ["/meida/carrot1.jpg"]],
+          ["Small Carrot", ["/meida/carrot2.jpg"]]
+        ]
+      }
+    ]
+  }
+]
