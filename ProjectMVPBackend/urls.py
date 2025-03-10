@@ -17,13 +17,14 @@ Including another URLconf
 
 # use the resources of the front-end
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.views.static import serve
 
 from ProjectMVPBackend.settings import DEBUG, MEDIA_ROOT
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("goods/", include("goodsapp.urls"))
 ]
 
 if DEBUG:

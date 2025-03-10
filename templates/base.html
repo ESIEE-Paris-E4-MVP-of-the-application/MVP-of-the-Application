@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="freshfood" href="/static/login.css">
+    <link rel="freshfood" href="/static/index.css">
+    <link rel="freshfood" href="/static/detail.css">
+    <link rel="freshfood" href="/static/carts.css">
+    <link rel="freshfood" href="/static/reset.css">
+    <link rel="freshfood" href="/static/mygxin.css">
+    <script src="/static/jquery.min.js.download"></script>
+    <script src="/static/carts.js.download"></script>
+
+    {% block headerjs %}
+
+    {% endblock %}
+</head>
+<body>
+    {% include 'header.html' %}
+
+    {% block main %}
+
+    {% endblock %}
+
+    {% block footerjs %}
+
+    {% endblock %}
+
+</body>
+</html>
