@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}User Login{% endblock %}
+
+{% block headerjs %}
+    <script src="/static/md5-min.js"></script>
+{% endblock %}
+
+{% block main %}
+<div class="login-body">
+    <div class="login-card">
+        <div class="login-top">
+            <h3>Login</h3>
+            <h5>Welcome back!</h5>
+        </div>
+        <div class="login-bottom">
+            <form method="post" action="/user/login/" onsubmit="return login();">
+                {% csrf_token %}
+                <div class="login-input-box">
+                    <input type="text" id="account" name="account" placeholder="Email" class="login-admin">
+                    <span id="aSpan" style="color:red;"></span>
+
+                    <input type="password" id="password" name="password" placeholder="Password" class="login-password">
+                    <span id="pSpan" style="color:red;"></span>
+
+                    <input type="text" id="code" placeholder="Captcha" style="width: 100px;" onblur="checkCode(this.value)">
+                    <img src="/user/loadCode/" onclick="changeCode(this)">
+                    <span id="cSpan" style="color:red;"></span>
+
+                    <button class="login-btn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footerjs %}
+<script>
+    function isEmail(str) {
+        return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(str);
+    }
+
+    function login() {
+        var account = document.getElementById('account').value;
+        var password = document.getElementById('password').value;
+        var valid = true;
+
+        document.getElementById('aSpan').textContent = isEmail(account) ? '' : 'Invalid email!';
+        document.getElementById('pSpan').textContent = password.length >= 6 ? '' : 'Password too short!';
+        valid = isEmail(account) && password.length >= 6;
+
+        if (valid) {
+            document.getElementById('password').value = hex_md5(password);
+        }
+        return valid;
+    }
+
+    function changeCode(img) {
+        img.src = '/user/loadCode/?r=' + new Date().getTime();
+    }
+
+    function checkCode(code) {
+        fetch('/user/checkCode/?code=' + code)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('cSpan').textContent = data.flag ? '✔' : '✘';
+            });
+    }
+</script>
+{% endblock %}

@@ -19,13 +19,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.static import serve
-
 from ProjectMVPBackend.settings import DEBUG, MEDIA_ROOT
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("goods/", include("goodsapp.urls"))
+    path(r'^admin/', admin.site.urls),
 ]
 
+
 if DEBUG:
-    urlpatterns.append(path(r'^media/(?<path>.*)$', serve,{'document_root': MEDIA_ROOT}),)
+    urlpatterns.append(path(r'^media/(?P<path>.*)$',serve,{'document_root':MEDIA_ROOT}),)

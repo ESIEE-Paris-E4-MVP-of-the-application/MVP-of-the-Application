@@ -42,7 +42,7 @@ def gene_code():
     image = Image.new('RGBA',(width,height),bgcolor) #创建图片
     import  os
     path = os.path.join(os.getcwd(),'utils','Arial.ttf')
-    print os.path.exists(path),'0-----------'
+    print.os.path.exists(path),'0-----------'
     font = ImageFont.truetype(path,36) #验证码的字体
     draw = ImageDraw.Draw(image)  #创建画笔
     text = gene_text() #生成字符串
