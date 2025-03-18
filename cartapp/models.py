@@ -2,8 +2,6 @@ from django.db import models
 
 # Create your models here.
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.db import models
 
 # Create your models here.
@@ -18,7 +16,7 @@ class CartItem(models.Model):
     weightid=models.PositiveIntegerField()
     count=models.PositiveIntegerField()
     isdelete=models.BooleanField(default=False)
-    user=models.ForeignKey(UserInfo)
+    user=models.ForeignKey(UserInfo,on_delete=models.CASCADE)
 
     def getColor(self):
         return Condition.objects.get(id=self.conditionid)
