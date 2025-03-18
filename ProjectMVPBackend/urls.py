@@ -22,9 +22,11 @@ from django.views.static import serve
 from ProjectMVPBackend.settings import DEBUG, MEDIA_ROOT
 
 urlpatterns = [
-    path(r'^admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('goods/', include('goodsapp.urls')),
+    path('users/', include('userapp.urls')),
 ]
 
-
 if DEBUG:
-    urlpatterns.append(path(r'^media/(?P<path>.*)$',serve,{'document_root':MEDIA_ROOT}),)
+    from django.conf.urls.static import static
+    urlpatterns += static('/media/', document_root=MEDIA_ROOT)
