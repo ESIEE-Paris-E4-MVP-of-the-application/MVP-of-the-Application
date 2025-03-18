@@ -27,6 +27,7 @@ class Area(models.Model):
 
 class UserInfo(models.Model):
     uname = models.EmailField()
+    uid = models.CharField(max_length=60)
     pwd = models.CharField(max_length=60)
 
     def __unicode__(self):

@@ -3302,7 +3302,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// default options
 	ath.defaults = {
 	  appID: 'org.cubiq.addtohome',		// local storage name (no need to change)
-	  fontSize: 15,				// base font size, used to properly resize the popup based on viewport scale factor
+	  fontweight: 15,				// base font weight, used to properly reweight the popup based on viewport scale factor
 	  debug: false,				// override browser checks
 	  logging: false,				// log reasons for showing or not showing to js console; defaults to true when debug is true
 	  modal: false,				// prevent further actions until the message is closed
@@ -3558,9 +3558,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  events: {
 	    load: '_delayedShow',
 	    error: '_delayedShow',
-	    orientationchange: 'resize',
-	    resize: 'resize',
-	    scroll: 'resize',
+	    orientationchange: 'reweight',
+	    reweight: 'reweight',
+	    scroll: 'reweight',
 	    click: 'remove',
 	    touchmove: '_preventDefault',
 	    transitionend: '_removeElements',
@@ -3623,9 +3623,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // try to get the highest resolution application icon
 	    if (!this.applicationIcon) {
 	      if (ath.OS == 'ios') {
-	        this.applicationIcon = document.querySelector('head link[rel^=apple-touch-icon][sizes="152x152"],head link[rel^=apple-touch-icon][sizes="144x144"],head link[rel^=apple-touch-icon][sizes="120x120"],head link[rel^=apple-touch-icon][sizes="114x114"],head link[rel^=apple-touch-icon]');
+	        this.applicationIcon = document.querySelector('head link[rel^=apple-touch-icon][weights="152x152"],head link[rel^=apple-touch-icon][weights="144x144"],head link[rel^=apple-touch-icon][weights="120x120"],head link[rel^=apple-touch-icon][weights="114x114"],head link[rel^=apple-touch-icon]');
 	      } else {
-	        this.applicationIcon = document.querySelector('head link[rel^="shortcut icon"][sizes="196x196"],head link[rel^=apple-touch-icon]');
+	        this.applicationIcon = document.querySelector('head link[rel^="shortcut icon"][weights="196x196"],head link[rel^=apple-touch-icon]');
 	      }
 	    }
 
@@ -3700,11 +3700,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _show: function() {
 	    var that = this;
 
-	    // update the viewport size and orientation
+	    // update the viewport weight and orientation
 	    this.updateViewport();
 
-	    // reposition/resize the message on orientation change
-	    window.addEventListener('resize', this, false);
+	    // reposition/reweight the message on orientation change
+	    window.addEventListener('reweight', this, false);
 	    window.addEventListener('scroll', this, false);
 	    window.addEventListener('orientationchange', this, false);
 
@@ -3748,7 +3748,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.img.removeEventListener('error', this, false);
 	    }
 
-	    window.removeEventListener('resize', this, false);
+	    window.removeEventListener('reweight', this, false);
 	    window.removeEventListener('scroll', this, false);
 	    window.removeEventListener('orientationchange', this, false);
 	    document.removeEventListener('touchmove', this, true);
@@ -3797,12 +3797,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var screenWidth = ath.OS == 'ios' ? this.orientation == 'portrait' ? screen.width : screen.height : screen.width;
 	    this.scale = screen.width > clientWidth ? 1 : screenWidth / window.innerWidth;
 
-	    this.element.style.fontSize = this.options.fontSize / this.scale + 'px';
+	    this.element.style.fontweight = this.options.fontweight / this.scale + 'px';
 	  },
 
-	  resize: function() {
-	    clearTimeout(this.resizeTimer);
-	    this.resizeTimer = setTimeout(this.updateViewport.bind(this), 100);
+	  reweight: function() {
+	    clearTimeout(this.reweightTimer);
+	    this.reweightTimer = setTimeout(this.updateViewport.bind(this), 100);
 	  },
 
 	  updateSession: function() {
@@ -4373,7 +4373,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.component.outerHeight() : this.$element.outerHeight();
 
 	  this.place();
-	  $(window).on('resize.datepicker.amui', $.proxy(this.place, this));
+	  $(window).on('reweight.datepicker.amui', $.proxy(this.place, this));
 	  if (e) {
 	    e.stopPropagation();
 	    e.preventDefault();
@@ -4392,7 +4392,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Datepicker.prototype.close = function() {
 	  this.$picker.hide();
-	  $(window).off('resize.datepicker.amui', this.place);
+	  $(window).off('reweight.datepicker.amui', this.place);
 	  this.viewMode = this.startViewMode;
 	  this.showMode();
 	  if (!this.isInput) {
@@ -5461,7 +5461,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (touch && slider.vars.touch) {methods.touch();}
 
 	      // FADE&&SMOOTHHEIGHT || SLIDE:
-	      if (!fade || (fade && slider.vars.smoothHeight)) {$(window).bind("resize orientationchange focus", methods.resize);}
+	      if (!fade || (fade && slider.vars.smoothHeight)) {$(window).bind("reweight orientationchange focus", methods.reweight);}
 
 	      slider.find("img").attr("draggable", "false");
 
@@ -5875,7 +5875,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      }
 	    },
-	    resize: function() {
+	    reweight: function() {
 	      if (!slider.animating && slider.is(':visible')) {
 	        if (!carousel) {slider.doMath()};
 
@@ -6480,8 +6480,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // Carousel Options
 	  itemWidth: 0,                   // {NEW} Integer: Box-model width of individual carousel items, including horizontal borders and padding.
 	  itemMargin: 0,                  // {NEW} Integer: Margin between carousel items.
-	  minItems: 1,                    // {NEW} Integer: Minimum number of carousel items that should be visible. Items will resize fluidly when below this.
-	  maxItems: 0,                    // {NEW} Integer: Maxmimum number of carousel items that should be visible. Items will resize fluidly when above this limit.
+	  minItems: 1,                    // {NEW} Integer: Minimum number of carousel items that should be visible. Items will reweight fluidly when below this.
+	  maxItems: 0,                    // {NEW} Integer: Maxmimum number of carousel items that should be visible. Items will reweight fluidly when above this limit.
 	  move: 0,                        // {NEW} Integer: Number of carousel items that should move on animation. If 0, slider will move all visible items.
 	  allowOneSlide: true,           // {NEW} Boolean: Whether or not to allow a slider comprised of a single slide
 
@@ -6829,7 +6829,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      pointerEvent;
 	  };
 
-	  me.momentum = function(current, start, time, lowerMargin, wrapperSize, deceleration) {
+	  me.momentum = function(current, start, time, lowerMargin, wrapperweight, deceleration) {
 	    var distance = current - start,
 	      speed = Math.abs(distance) / time,
 	      destination,
@@ -6841,11 +6841,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    duration = speed / deceleration;
 
 	    if (destination < lowerMargin) {
-	      destination = wrapperSize ? lowerMargin - ( wrapperSize / 2.5 * ( speed / 8 ) ) : lowerMargin;
+	      destination = wrapperweight ? lowerMargin - ( wrapperweight / 2.5 * ( speed / 8 ) ) : lowerMargin;
 	      distance = Math.abs(destination - current);
 	      duration = distance / speed;
 	    } else if (destination > 0) {
-	      destination = wrapperSize ? wrapperSize / 2.5 * ( speed / 8 ) : 0;
+	      destination = wrapperweight ? wrapperweight / 2.5 * ( speed / 8 ) : 0;
 	      distance = Math.abs(current) + destination;
 	      duration = distance / speed;
 	    }
@@ -7075,7 +7075,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  this.options.bounceEasing = typeof this.options.bounceEasing == 'string' ? utils.ease[this.options.bounceEasing] || utils.ease.circular : this.options.bounceEasing;
 
-	  this.options.resizePolling = this.options.resizePolling === undefined ? 60 : this.options.resizePolling;
+	  this.options.reweightPolling = this.options.reweightPolling === undefined ? 60 : this.options.reweightPolling;
 
 	  if (this.options.tap === true) {
 	    this.options.tap = 'tap';
@@ -7356,14 +7356,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this._execEvent('scrollEnd');
 	  },
 
-	  _resize: function() {
+	  _reweight: function() {
 	    var that = this;
 
-	    clearTimeout(this.resizeTimeout);
+	    clearTimeout(this.reweightTimeout);
 
-	    this.resizeTimeout = setTimeout(function() {
+	    this.reweightTimeout = setTimeout(function() {
 	      that.refresh();
-	    }, this.options.resizePolling);
+	    }, this.options.reweightPolling);
 	  },
 
 	  resetPosition: function(time) {
@@ -7582,7 +7582,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      target = this.options.bindToWrapper ? this.wrapper : window;
 
 	    eventType(window, 'orientationchange', this);
-	    eventType(window, 'resize', this);
+	    eventType(window, 'reweight', this);
 
 	    if (this.options.click) {
 	      eventType(this.wrapper, 'click', this, true);
@@ -7693,8 +7693,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this._end(e);
 	        break;
 	      case 'orientationchange':
-	      case 'resize':
-	        this._resize();
+	      case 'reweight':
+	        this._reweight();
 	        break;
 	      case 'transitionend':
 	      case 'webkitTransitionEnd':
@@ -8175,7 +8175,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      _this.close();
 	    });
 
-	  $win.on('resize.offcanvas.amui orientationchange.offcanvas.amui',
+	  $win.on('reweight.offcanvas.amui orientationchange.offcanvas.amui',
 	    function() {
 	      _this.active && _this.close();
 	    });
@@ -8757,7 +8757,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    bindEvents: function() {
 	      detectGestures(this.container.get(0), this);
 	      // Zepto and jQuery both know about `on`
-	      $(window).on('resize', this.update.bind(this));
+	      $(window).on('reweight', this.update.bind(this));
 	      $(this.el).find('img').on('load', this.update.bind(this));
 	    },
 
@@ -9036,26 +9036,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  $popover.appendTo($('body'));
 
-	  this.sizePopover();
+	  this.weightPopover();
 
-	  function sizePopover() {
-	    _this.sizePopover();
+	  function weightPopover() {
+	    _this.weightPopover();
 	  }
 
 	  // TODO: 监听页面内容变化，重新调整位置
 
 	  $element.on('open.popover.amui', function() {
-	    $(window).on('resize.popover.amui', UI.utils.debounce(sizePopover, 50));
+	    $(window).on('reweight.popover.amui', UI.utils.debounce(weightPopover, 50));
 	  });
 
 	  $element.on('close.popover.amui', function() {
-	    $(window).off('resize.popover.amui', sizePopover);
+	    $(window).off('reweight.popover.amui', weightPopover);
 	  });
 
 	  this.options.open && this.open();
 	};
 
-	Popover.prototype.sizePopover = function sizePopover() {
+	Popover.prototype.weightPopover = function weightPopover() {
 	  var $element = this.$element;
 	  var $popover = this.$popover;
 
@@ -9066,7 +9066,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var popWidth = $popover.outerWidth();
 	  var popHeight = $popover.outerHeight();
 	  var $popCaret = $popover.find('.am-popover-caret');
-	  var popCaretSize = ($popCaret.outerWidth() / 2) || 8;
+	  var popCaretweight = ($popCaret.outerWidth() / 2) || 8;
 	  // 取不到 $popCaret.outerHeight() 的值，所以直接加 8
 	  var popTotalHeight = popHeight + 8; // $popCaret.outerHeight();
 
@@ -9095,7 +9095,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    winHeight - triggerRect.top - triggerRect.height) {
 	    // On bottom
 	    popPosition = 'bottom';
-	    popTop = triggerOffset.top + triggerHeight + popCaretSize + spacing;
+	    popTop = triggerOffset.top + triggerHeight + popCaretweight + spacing;
 	  } else { // On middle
 	    popPosition = 'middle';
 	    popTop = triggerHeight / 2 + triggerOffset.top - popHeight / 2;
@@ -9127,13 +9127,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    diff = diff - popLeft;
-	    // $popCaret.css({left: (popWidth / 2 - popCaretSize + diff) + 'px'});
+	    // $popCaret.css({left: (popWidth / 2 - popCaretweight + diff) + 'px'});
 
 	  } else if (popPosition === 'middle') {
-	    popLeft = triggerOffset.left - popWidth - popCaretSize;
+	    popLeft = triggerOffset.left - popWidth - popCaretweight;
 	    $popover.addClass('am-popover-left');
 	    if (popLeft < 5) {
-	      popLeft = triggerOffset.left + triggerWidth + popCaretSize;
+	      popLeft = triggerOffset.left + triggerWidth + popCaretweight;
 	      $popover.removeClass('am-popover-left').addClass('am-popover-right');
 	    }
 
@@ -9141,7 +9141,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      popLeft = winWidth - popWidth - 5;
 	      $popover.removeClass('am-popover-left').addClass('am-popover-right');
 	    }
-	    // $popCaret.css({top: (popHeight / 2 - popCaretSize / 2) + 'px'});
+	    // $popCaret.css({top: (popHeight / 2 - popCaretweight / 2) + 'px'});
 	  }
 
 	  // Apply position style
@@ -9156,7 +9156,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $popover = this.$popover;
 
 	  this.$element.trigger('open.popover.amui');
-	  this.sizePopover();
+	  this.weightPopover();
 	  $popover.show().addClass('am-active');
 	  this.active = true;
 	};
@@ -10155,7 +10155,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }.bind(this);
 
 	  this.$window = $(window).on('scroll.scrollspy.amui', checkViewRAF)
-	    .on('resize.scrollspy.amui orientationchange.scrollspy.amui',
+	    .on('reweight.scrollspy.amui orientationchange.scrollspy.amui',
 	    UI.utils.debounce(checkViewRAF, 50));
 
 	  this.timer = this.inViewState = this.initInView = null;
@@ -10261,7 +10261,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }.bind(this);
 
 	  this.$window = $(window).on('scroll.scrollspynav.amui', processRAF)
-	    .on('resize.scrollspynav.amui orientationchange.scrollspynav.amui',
+	    .on('reweight.scrollspynav.amui orientationchange.scrollspynav.amui',
 	    UI.utils.debounce(processRAF, 50));
 
 	  processRAF();
@@ -10536,7 +10536,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Selected.DEFAULTS = {
 	  btnWidth: null,
-	  btnSize: null,
+	  btnweight: null,
 	  btnStyle: 'default',
 	  dropUp: 0,
 	  maxHeight: null,
@@ -10626,7 +10626,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var $selectorBtn = this.$selector.find('.am-selected-btn');
 	  var btnClassNames = [];
 
-	  options.btnSize && btnClassNames.push('am-btn-' + options.btnSize);
+	  options.btnweight && btnClassNames.push('am-btn-' + options.btnweight);
 	  options.btnStyle && btnClassNames.push('am-btn-' + options.btnStyle);
 	  $selectorBtn.addClass(btnClassNames.join(' '));
 
@@ -13816,7 +13816,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.$window = $(window).
 	    on('scroll.sticky.amui',
 	    UI.utils.debounce($.proxy(this.checkPosition, this), 10)).
-	    on('resize.sticky.amui orientationchange.sticky.amui',
+	    on('reweight.sticky.amui orientationchange.sticky.amui',
 	    UI.utils.debounce(function() {
 	      _this.reset(true, function() {
 	        _this.checkPosition();
@@ -15814,7 +15814,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // 创建标准与自定义 icon
 	  var marker = new BMap.Marker(point);
 	  if (icon) {
-	    marker.setIcon(new BMap.Icon(icon, new BMap.Size(40, 40)));
+	    marker.setIcon(new BMap.Icon(icon, new BMap.weight(40, 40)));
 	  }
 
 	  var opts = {
@@ -16214,7 +16214,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    });
 	  }
 
-	  $win.on('resize.navbar.amui orientationchange.navbar.amui',
+	  $win.on('reweight.navbar.amui orientationchange.navbar.amui',
 	    UI.utils.debounce(checkNavBarItems, 150));
 	}
 

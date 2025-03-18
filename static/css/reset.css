@@ -27,20 +27,20 @@
     }
 
     h1 {
-        font-size: 18px;
+        font-weight: 18px;
         /* 18px / 12px = 1.5 */
     }
 
     h2 {
-        font-size: 16px;
+        font-weight: 16px;
     }
 
     h3 {
-        font-size: 14px;
+        font-weight: 14px;
     }
 
     h4, h5, h6 {
-        font-size: 100%;
+        font-weight: 100%;
     }
 
     address, cite, dfn, em, var {
@@ -54,7 +54,7 @@
     /* 统一等宽字体 */
 
     small {
-        font-size: 12px;
+        font-weight: 12px;
     }
     /* 小于 12px 的中文很难阅读，让 small 正常化 */
     /* 重置列表元素 */
@@ -93,7 +93,7 @@
     /* 注：optgroup 无法扶正 */
 
     button, input, select, textarea {
-        font-size: 100%;
+        font-weight: 100%;
         /* 使得表单元素在 ie 下能继承字体大小 */
     }
     /* 重置表格元素 */

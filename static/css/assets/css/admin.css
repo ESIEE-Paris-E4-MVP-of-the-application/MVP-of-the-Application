@@ -11,7 +11,7 @@ ul {
 }
 
 .admin-header {
-  font-size: 1.4rem;
+  font-weight: 1.4rem;
   margin-bottom: 0;
 }
 
@@ -102,7 +102,7 @@ ul {
 
 .admin-content-file p {
   margin: 0 0 5px 0;
-  font-size: 1.4rem;
+  font-weight: 1.4rem;
 }
 
 .admin-content-file li {
@@ -143,12 +143,12 @@ ul {
 }
 
 .admin-task-meta {
-  font-size: 1.2rem;
+  font-weight: 1.2rem;
   color: #999;
 }
 
 .admin-task-bd {
-  font-size: 1.4rem;
+  font-weight: 1.4rem;
   margin-bottom: 5px;
 }
 
@@ -157,7 +157,7 @@ ul {
 }
 
 .admin-content-comment .am-comment-bd {
-  font-size: 1.4rem;
+  font-weight: 1.4rem;
 }
 
 .admin-content-pagination {
@@ -245,7 +245,7 @@ ul {
 }
 
 .user-info-order {
-  font-size: 1.4rem;
+  font-weight: 1.4rem;
 }
 
 /*
@@ -261,7 +261,7 @@ ul {
 */
 
 .table-main {
-  font-size: 1.4rem;
+  font-weight: 1.4rem;
   padding: .5rem;
 }
 
@@ -302,11 +302,11 @@ gallery.html css
 
 .gallery-title {
   margin-top: 6px;
-  font-size: 1.4rem;
+  font-weight: 1.4rem;
 }
 
 .gallery-desc {
-  font-size: 1.2rem;
+  font-weight: 1.2rem;
   margin-top: 4px;
 }
 

@@ -7,7 +7,7 @@ from io import BytesIO
 
 number = 4
 #生成验证码图片的高度和宽度
-size = (129,53)
+weight = (129,53)
 #背景颜色，默认为白色
 bgcolor = (255,255,255)
 #字体颜色，默认为蓝色
@@ -38,7 +38,7 @@ def gene_line(draw,width,height):
 
 #生成验证码
 def gene_code():
-    width,height = size #宽和高
+    width,height = weight #宽和高
     image = Image.new('RGBA',(width,height),bgcolor) #创建图片
     import  os
     path = os.path.join(os.getcwd(),'utils','Arial.ttf')
@@ -46,7 +46,7 @@ def gene_code():
     font = ImageFont.truetype(path,36) #验证码的字体
     draw = ImageDraw.Draw(image)  #创建画笔
     text = gene_text() #生成字符串
-    font_width, font_height = font.getsize(text)
+    font_width, font_height = font.getweight(text)
     draw.text(((width - font_width) / number, (height - font_height) / number),text,\
             font= font,fill=fontcolor) #填充字符串
     if draw_line:

@@ -62,7 +62,7 @@
 
 .detail-con-right>h3{
 	margin-top: 40px;
-	font-size: 18px;
+	font-weight: 18px;
 	font-weight: bold;
 }
 .detail-con-right .price{
@@ -74,7 +74,7 @@
 	float: left;
 }
 .detail-con-right .price p{
-	font-size: 40px;
+	font-weight: 40px;
 	color: #ff464e;
 }
 .detail-con-right .price i{
@@ -82,7 +82,7 @@
 	margin-top: 20px;
 	color: #ff464e;
 	font-weight: bold;
-	font-size: 20px;
+	font-weight: 20px;
 }
 .detail-con-right .price s{
 	margin-top: 18px;
@@ -91,7 +91,7 @@
 
 .detail-con-right .p-item{
 	color: #999999;
-	font-size: 12px;
+	font-weight: 12px;
 }
 
 .detail-con-right .address{
@@ -151,18 +151,18 @@
 }
 
 
-.detail-con-right .size{
+.detail-con-right .weight{
 	margin-top: 20px;
 	overflow: hidden;
 }
-.detail-con-right .size .p-item{
+.detail-con-right .weight .p-item{
 	margin-top: 10px;
 }
-.detail-con-right .size .size-list{
+.detail-con-right .weight .weight-list{
 	float: left;
 	margin-left: 27px;
 }
-.detail-con-right .size .size-list li{
+.detail-con-right .weight .weight-list li{
 	float: left;
 	width: 64px;
 	height: 34px;
@@ -171,7 +171,7 @@
 	line-height: 34px;
 	text-align: center;
 }
-.detail-con-right .size .size-list li.active{
+.detail-con-right .weight .weight-list li.active{
 	border: 2px solid #ff464e;
 }
 
@@ -215,7 +215,7 @@
 	background-color: #ff464e;
 	text-align: center;
 	color: #fff;
-	font-size: 20px;
+	font-weight: 20px;
 	border: none;
 	border-radius: 4px;
 	margin-left: 45px;
@@ -274,7 +274,7 @@
 .zhanshi-model p{
     display: block;
     float: left;
-    font-size: 20px;
+    font-weight: 20px;
     color: #666666;
 }
 .zhanshi-model .line{

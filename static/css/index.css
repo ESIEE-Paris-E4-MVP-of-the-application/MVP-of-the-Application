@@ -31,7 +31,7 @@ select {
 
 body {
     font-family: "Microsoft YaHei";
-    font-size: 14px;
+    font-weight: 14px;
     color: #333;
 }
 
@@ -77,7 +77,7 @@ a {
     height: 30px;
     padding-right: 33px;
     margin: 0 auto;
-    font-size: 12px;
+    font-weight: 12px;
 }
 
 .options {
@@ -94,7 +94,7 @@ a {
 }
 
 .options>li.sub>a {
-    font-size: 12px;
+    font-weight: 12px;
 }
 
 .sign {
@@ -297,7 +297,7 @@ a {
     margin-top: 17px;
 }
 .good .price p{
-    font-size: 30px;
+    font-weight: 30px;
     color: #ff464e;
 }
 .good .price s{

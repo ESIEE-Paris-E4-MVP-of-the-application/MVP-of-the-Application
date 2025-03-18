@@ -38,14 +38,14 @@
 	cursor: pointer;
 	width: 90%;
 	color: #444;
-	font-size: 14px;
+	font-weight: 14px;
 }
 .Bott .zuo ul li a{
 	display: inline-block;
 	color: #757575;
 	width: 40%;
 	text-align: left;
-	font-size: 14px;
+	font-weight: 14px;
 }
 .Bott .zuo ul li.on a,.Bott .zuo ul li a:hover{
 	color: #A10000;
@@ -61,7 +61,7 @@
 	border: 1px solid #e4e4e4;
 }
 .Bott .you  h2{
-	font-size: 22px;
+	font-weight: 22px;
 	font-weight: normal;
 	padding-bottom: 20px;
 	border-bottom: 1px solid #E6E6E6;
@@ -86,7 +86,7 @@
 }
 .Bott .you .tx div p span{
 	display: block;
-	font-size: 16px;
+	font-weight: 16px;
 	margin-bottom: 10px;
 }
 .Bott .you .tx div p a{
@@ -107,7 +107,7 @@
 	margin: 20px 0;
 }
 .Bott .you .bott div p{
-	font-size: 15px;
+	font-weight: 15px;
 	color: #757575;
 	margin: 35px 0 0 15px;
 }
@@ -116,7 +116,7 @@
 }
 .Bott .you .bott div a{
 	display: block;
-	font-size: 12px;
+	font-weight: 12px;
 	color: #757575;
 	margin-top: 10px;
 }
@@ -153,7 +153,7 @@
 	line-height: 20px;
 }
 .Bott .you .add div p:nth-child(1){
-	font-size: 18px;
+	font-weight: 18px;
 	margin-bottom: 25px;
 	color: #262626;
 }

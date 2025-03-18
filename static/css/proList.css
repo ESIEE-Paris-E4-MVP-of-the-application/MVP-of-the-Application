@@ -76,7 +76,7 @@
 .proList > li dl dd:last-child,
 .paintList a dl dd:last-child{
 	color: #C10000;
-	font-size:16px;
+	font-weight:16px;
 }
 /***************aHover*************/
 .proList > li p{
@@ -128,7 +128,7 @@
 .proDets .tit{
 	height:50px;
 	line-height:50px;
-	font-size:26px;
+	font-weight:26px;
 	margin-bottom:20px;
 }
 .proDets .tit h4{
@@ -254,14 +254,14 @@ a.more{
 	height:50px;
 	line-height:50px;
 	font-weight:normal;
-	font-size: 22px;
+	font-weight: 22px;
 }
 .detCon .intro .title p{
 	margin:10px 0;
 	color: #777;
 }
 .detCon .intro .title span{
-	font-size: 22px;
+	font-weight: 22px;
 	color:#C10000;
 }
 .detCon .intro .proIntro{
@@ -350,7 +350,7 @@ a.more{
 	text-align: center;
 	height:70px;
 	line-height:70px;
-	font-size: 16px;
+	font-weight: 16px;
 	font-weight: normal;
 }
 .imgCon{
@@ -402,7 +402,7 @@ a.more{
 }
 .likeList dl dd:last-child{
 	color:#c10000;
-	font-size: 14px;
+	font-weight: 14px;
 }
 .xxCon a{
 	display: block;
@@ -530,7 +530,7 @@ section h3{
 .cart div.site{
 	height:65px;
 	line-height:65px;
-	font-size:16px;
+	font-weight:16px;
 }
 .order .site{
 	border-bottom: 1px solid #dbdbdb;
@@ -693,7 +693,7 @@ section h3{
 .table .goOn{
 	height:500px;
 	line-height:500px;
-	font-size: 16px;
+	font-weight: 16px;
 	color:#666;
 	text-align: center;
 	display: none;
@@ -732,7 +732,7 @@ section h3{
 }
 .tipDel p:first-child{
 	margin-bottom:100px;
-	font-size: 16px;
+	font-weight: 16px;
 }
 .tipDel p a{
 	width:100px;
@@ -755,10 +755,10 @@ section h3{
 	line-height:48px;
 	font-weight: normal;
 	border-bottom:1px solid #dbdbdb;
-	font-size:16px;
+	font-weight:16px;
 }
 .order .orderCon h3 a{
-	font-size:12px;
+	font-weight:12px;
 }
 .order .orderCon h3 a{
 	text-decoration: underline;
@@ -844,7 +844,7 @@ section h3{
 .order .orderCon .orderR .count{
 	margin:10px 0;
 	border:none;
-	font-size:16px;
+	font-weight:16px;
 }
 .order .orderCon .orderR .count span:nth-child(2){
 	color:#c10000;
@@ -862,13 +862,13 @@ section h3{
 p.ok{
 	text-align: center;
 	color:#c10000;
-	font-size: 16px;
+	font-weight: 16px;
 	margin:50px 0;
 }
 p.ok a{
 	display: block;
 	margin:30px 0;
-	font-size: 12px;
+	font-weight: 12px;
 	color:#777;
 	text-decoration: underline;
 }

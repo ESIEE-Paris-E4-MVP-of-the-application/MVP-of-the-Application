@@ -34,17 +34,17 @@
 	width: 80px;
 	height: 64px;
 	color: #ff464e;
-	font-size: 16px;
+	font-weight: 16px;
 	margin-left: 50px;
 }
 .login-top h5{
 	width: 170px;
 	color: #666666;
-	font-size: 12px;
+	font-weight: 12px;
 	margin-left: 30px;
 }
 .login-top h4{
-	font-size: 16px;
+	font-weight: 16px;
 	margin-left: 460px;
 }
 .login-top h4>a{
@@ -59,7 +59,7 @@
 }
 .login-admin, .login-password{
 	/*background-image: url(../images/login_03.png);*/
-	background-size: 39px 38px;
+	background-weight: 39px 38px;
 	background-position:left top;
 	background-repeat: no-repeat;
 	width: 270px;
@@ -109,14 +109,14 @@
 	outline: none;
 	text-align: center;
 	line-height: 40px;
-	font-size: 18px;
+	font-weight: 18px;
 }
 
 .otherLogin{
 	float: left;
 }
 .otherLogin h4{
-	font-size: 12px;
+	font-weight: 12px;
 	margin-top: 33px;
 }
 .otherLogin .img{

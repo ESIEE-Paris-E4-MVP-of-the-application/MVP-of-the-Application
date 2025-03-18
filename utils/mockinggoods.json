@@ -10,7 +10,7 @@
         "weights": [["500g", 1], ["1kg", 2]],
         "conditions": [["Fresh", "/media/fresh_apple.jpg"], ["Organic", "media/organic_apple.jpg"]],
         "specs": [
-          ["Fuji Apple", ["media/apple1.jpg", "/meida/apple2.jpg"]],
+          ["Fuji Apple", ["image 1", "/meida/apple2.jpg"]],
           ["Green Apple", ["/meida/apple3.jpg", "/meida/apple4.jpg"]]
         ]
       },
